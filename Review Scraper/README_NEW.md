@@ -2,13 +2,61 @@
 
 A clean, modular, and future-proof Google Maps review scraper built with Python and Playwright.
 
+## ⚡ TLDR - Quick Start
+
+Want to start scraping immediately? Here's everything you need:
+
+### 🔧 Installation
+
+```bash
+# 1. Clone/download the project
+# 2. Create virtual environment
+python -m venv venv
+./venv/Scripts/activate  # Windows
+# source venv/bin/activate  # macOS/Linux
+
+# 3. Install dependencies
+pip install playwright pandas emoji deep-translator
+
+# 4. Install Playwright browsers
+playwright install chromium
+```
+
+### 🎯 Run Your First Scrape
+
+```python
+# Create a file called quick_start.py
+from main import ReviewScraperApp
+
+app = ReviewScraperApp(
+    business_name="Your Restaurant Name",  # Change this!
+    max_reviews=50,
+    enable_translation=True,
+    headless=False  # Set True to hide browser
+)
+
+result = app.run()
+app.save_results(result)
+print(f"✅ Scraped {result.total_extracted} reviews!")
+```
+
+### 🏃‍♂️ Run It
+
+```bash
+python quick_start.py
+```
+
+**That's it!** Your reviews will be saved in the `reviews/` folder as CSV, JSON, and summary files.
+
+---
+
 ## 🏗️ Architecture Overview
 
 The application has been refactored into a clean, modular structure:
 
 ```
 review_scraper/
-├── main.py                  # Main entry point (refactored)
+├── main.py                  # Main entry point
 ├── examples.py              # Usage examples
 ├── .gitignore               # Git ignore file (excludes reviews/ folder)
 ├── config/                  # Configuration management
@@ -25,7 +73,7 @@ review_scraper/
 │   └── review.py            # Review and result data classes
 └── reviews/                 # Output folder (git ignored)
     ├── *.csv                # CSV exports
-    ├── *.json               # JSON results  
+    ├── *.json               # JSON results
     └── *.txt                # Summary reports
 ```
 
