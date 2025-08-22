@@ -1,0 +1,14 @@
+Review Scraping Summary Report
+========================================
+Business: Rex
+Scraped at: 2025-08-22 09:35:05
+
+Results:
+  - Reviews found: 90
+  - Reviews extracted: 90
+  - Success rate: 100.0%
+
+Review Statistics:
+  - Total reviews: 90
+  - Translated reviews: 0
+  - Original language reviews: 90

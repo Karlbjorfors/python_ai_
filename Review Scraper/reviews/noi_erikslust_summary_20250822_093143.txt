@@ -1,0 +1,14 @@
+Review Scraping Summary Report
+========================================
+Business: Noi Erikslust
+Scraped at: 2025-08-22 09:31:43
+
+Results:
+  - Reviews found: 40
+  - Reviews extracted: 40
+  - Success rate: 100.0%
+
+Review Statistics:
+  - Total reviews: 40
+  - Translated reviews: 0
+  - Original language reviews: 40

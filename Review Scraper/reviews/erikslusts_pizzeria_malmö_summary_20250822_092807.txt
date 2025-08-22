@@ -1,0 +1,14 @@
+Review Scraping Summary Report
+========================================
+Business: Erikslusts Pizzeria Malmö
+Scraped at: 2025-08-22 09:28:07
+
+Results:
+  - Reviews found: 50
+  - Reviews extracted: 50
+  - Success rate: 100.0%
+
+Review Statistics:
+  - Total reviews: 50
+  - Translated reviews: 0
+  - Original language reviews: 50
