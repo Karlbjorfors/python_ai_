@@ -1,5 +1,0 @@
-playwright
-pandas
-bs4
-emoji
-logging
