@@ -8,8 +8,9 @@ The application has been refactored into a clean, modular structure:
 
 ```
 review_scraper/
-├── main.py                  # Main entry point
+├── main.py                  # Main entry point (refactored)
 ├── examples.py              # Usage examples
+├── .gitignore               # Git ignore file (excludes reviews/ folder)
 ├── config/                  # Configuration management
 │   ├── settings.py          # Application settings
 │   └── logging_config.py    # Logging configuration
@@ -20,8 +21,12 @@ review_scraper/
 ├── utils/                   # Utility functions
 │   ├── text_processor.py    # Text cleaning & translation
 │   └── data_exporter.py     # Data export functionality
-└── models/                  # Data models
-    └── review.py            # Review and result data classes
+├── models/                  # Data models
+│   └── review.py            # Review and result data classes
+└── reviews/                 # Output folder (git ignored)
+    ├── *.csv                # CSV exports
+    ├── *.json               # JSON results  
+    └── *.txt                # Summary reports
 ```
 
 ## ✨ Key Features
@@ -50,6 +55,7 @@ review_scraper/
 - **Automatic Detection**: Detects source language automatically
 - **Smart Translation**: Only translates non-English content
 - **Error Resilience**: Falls back to original text if translation fails
+- **Modern Library**: Uses `deep-translator` for Python 3.13+ compatibility
 
 ### 📁 **Multiple Export Formats**
 
@@ -63,7 +69,24 @@ review_scraper/
 - **Detailed Logging**: Comprehensive logging for debugging
 - **Error Reporting**: Collects and reports all errors
 
+### 🔒 **Data Privacy & Git Management**
+
+- **Local Storage**: All scraped data stays on your local machine
+- **Git Ignored**: The `reviews/` folder is automatically excluded from version control
+- **Clean Repository**: No accidental commits of sensitive review data
+- **Configurable Output**: Choose where to save your exports
+
 ## 🚀 Quick Start
+
+### Prerequisites
+
+```bash
+# Install required packages
+pip install -r requirements.txt
+
+# Note: Fix typo in filename if needed
+# mv requiremets.txt requirements.txt
+```
 
 ### Basic Usage
 
@@ -88,7 +111,7 @@ saved_files = app.save_results(result, formats=['csv', 'summary'])
 ### Advanced Usage
 
 ```python
-from main_new import ReviewScraperApp
+from main import ReviewScraperApp
 from config.settings import settings
 
 # Customize settings
@@ -274,7 +297,7 @@ for business in businesses:
 
 ### Migration Steps
 
-1. **Replace old main.py**: Use `main.py` as your entry point
+1. **Use the refactored main.py**: The main.py file now contains the modular architecture
 2. **Update imports**: Use the new modular imports
 3. **Configure settings**: Set your preferences in `config/settings.py`
 4. **Test functionality**: Run examples to ensure everything works
